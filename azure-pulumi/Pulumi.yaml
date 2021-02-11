@@ -1,0 +1,7 @@
+name: nginx-controller
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+config: config
+description: NGINX Controller Install
