@@ -7,7 +7,7 @@ infrastructure provisioning utility) to install and configure
 Controller installation can be done directly using Pulumi's Python support or
 alternatively by using Docker.
 
-[![Screen capture of NGINX Controller install](https://asciinema.org/a/fQ3s30Y0etprUJTC8NiBTroHu.svg)](https://asciinema.org/a/fQ3s30Y0etprUJTC8NiBTroHu?autoplay=1)
+[![Screen capture of NGINX Controller install](https://asciinema.org/a/390888.svg)](https://asciinema.org/a/390888?autoplay=1)
 
 ## Getting Started
 
