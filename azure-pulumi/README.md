@@ -61,6 +61,7 @@ config:
   nginx-controller:controller_archive_path: installer-archives/controller-installer-3.13.0.tar.gz
   # The password for the user created on the Controller VM
   nginx-controller:controller_host_password:
+    # Be sure to leave this as is and not set it
     secure: 
   # The user created on the Controller VM (defaults to 'controller' if unset)
   nginx-controller:controller_host_username: controller
@@ -71,6 +72,7 @@ config:
   # The admin user created on the new PostgreSQL instance (defaults to 'controller' if unset).
   # This value only needs to be set if you are installing with db_type == 'sass'
   nginx-controller:db_admin_password:
+    # Be sure to leave this as is and not set it
     secure: 
   
   # SMTP Settings
@@ -89,6 +91,7 @@ config:
   nginx-controller:smtp_user: apikey
   # SMTP password (needed if SMTP authentication is enabled)
   nginx-controller:smtp_pass:
+    # Be sure to leave this as is and not set it
     secure: 
   # SMTP port number
   nginx-controller:smtp_port: "465"
@@ -97,7 +100,8 @@ config:
 ```
 
 After creating the configuration file and populating the settings above, use the
-Pulumi CLI to set the secrets for the environment.
+Pulumi CLI to set the secrets for the environment. This will add encrypted values for
+the portion of the configuration that is has a "secure" sub-key.
 ```
 pulumi config set --secret nginx-controller:admin_password
 pulumi config set --secret nginx-controller:controller_host_password
