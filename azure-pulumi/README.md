@@ -9,7 +9,33 @@ alternatively by using Docker.
 
 [![Screen capture of NGINX Controller install](https://asciinema.org/a/390888.svg)](https://asciinema.org/a/390888?autoplay=1)
 
-## Getting Started
+## Getting Started (Quick Start Scripts)
+
+This project provides [a script](setup/base_setup.sh) that will set up Python 3, 
+Pulumi and the Azure CLI for this project. Additionally, it will install the 
+Python modules needed for the project. The script supports MacOS, Ubuntu, 
+Debian, CentOS, and Fedora. It should work with any Debian or RHEL compatible 
+Linux distribution.
+
+Run the script by:
+```
+bash setup/base_setup.sh
+```
+
+Once your environment is set up, then proceed to logging into Pulumi / Azure,
+and configuring Pulumi's runtime settings by running the following command. If
+Pulumi prompts you for a stack name, you can use the value `demo` as we are
+using here.
+```
+bash setup/project_setup.sh
+```
+
+Now, we can stand up Controller with one command!
+```
+pulumi up
+```
+
+## Getting Started (Manual Steps)
 
 In order to run this project, Python 3.6+ with the 
 [Venv](https://docs.python.org/3/library/venv.html) module installed is required. 
@@ -109,6 +135,28 @@ pulumi config set --secret nginx-controller:controller_host_password
 pulumi config set --secret nginx-controller:db_admin_password
 # Only needed if using SMTP authentication
 pulumi config set --secret nginx-controller:smtp_pass
+```
+
+Next, set up python venv. Typically, you can do this by executing the following
+in your working directory:
+```
+python3 -m venv venv
+```
+
+If you get a message about venv not being found, you will need to install it. 
+On Ubuntu, this can be done by `sudo apt-get install python3-venv`.
+
+From here, we activate the venv environment by:
+```
+source venv/bin/activate
+```
+
+The next step is to install the python dependencies using pip:
+```
+# Wheel will allow us to quickly install prebuilt python packages
+pip3 install wheel
+# Install project dependencies
+pip3 install -r requirements.txt
 ```
 
 Now, we can stand up Controller with one command!
