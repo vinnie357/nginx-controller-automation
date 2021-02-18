@@ -42,7 +42,7 @@ export CERT_DIR="/etc/letsencrypt/live/${CTR_FQDN}"
 export CTR_TSDB_VOL_TYPE="local"
 
 # Use these settings if we are using Azure's PostgreSQL service
-if [ "${PG_INSTALL_TYPE+x}" == "sass" ]; then
+if [ "${PG_INSTALL_TYPE}" == "sass" ]; then
   export PGSSLROOTCERT="/etc/ssl/certs/Baltimore_CyberTrust_Root.pem"
   export CTR_DB_PORT="5432"
   export CTR_DB_CA="/etc/ssl/certs/Baltimore_CyberTrust_Root.pem"
