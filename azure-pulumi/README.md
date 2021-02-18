@@ -22,6 +22,10 @@ Run the script by:
 bash setup/base_setup.sh
 ```
 
+Now, download a Controller installer archive from 
+[My F5](https://my.f5.com/manage/s/) and copy it into the local subdirectory 
+`installer-archives`.
+
 Once your environment is set up, then proceed to logging into Pulumi / Azure,
 and configuring Pulumi's runtime settings by running the following command. If
 Pulumi prompts you for a stack name, you can use the value `demo` as we are
