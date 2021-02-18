@@ -9,7 +9,7 @@ set -o pipefail
 # Exit the script when there are undeclared variables
 set -o nounset
 
-if [ -n "${NONINTERACTIVE}" ]; then
+if [ -n "${NONINTERACTIVE-}" ]; then
   export DEBIAN_FRONTEND=noninteractive
   assume_yes="-y"
 else
