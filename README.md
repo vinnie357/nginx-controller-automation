@@ -3,6 +3,12 @@
 This repository contains projects that serve as examples for automating the
 installation or administration of [NGINX Controller](https://www.nginx.com/products/nginx-controller/).
 
+# non SAAS login
+Logging Into the Local Filesystem Backend
+To use the filesystem backend to store your checkpoint files locally on your machine, pass the --local flag when logging in:
+
+pulumi login --local
+
 ## Projects
 
 ### [Controller Installation on Azure with Pulumi and Python](azure-pulumi)
